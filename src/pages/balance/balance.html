@@ -43,14 +43,14 @@
     <ion-toolbar position="bottom" class="background-white">
         <div class="row">
             <div class="col col-50">
-                <button ion-button block color="positive"
-                        on-click="goToTransfer()" [disabled]="!selectedMosaic">
+                <button ion-button block color="#00C4B3"
+                        on-click="goToTransfer()" [disabled]="!selectedMosaic" class="btn-1">
                     {{'TRANSFER_BUTTON' | translate}}
                 </button>
             </div>
             <div class="col col-50">
                 <button ion-button block color="secondary"
-                        on-click="goToReceive()" [disabled]="!selectedMosaic">
+                        on-click="goToReceive()" [disabled]="!selectedMosaic" class="btn-1">
                     {{'RECEIVE_BUTTON' | translate}}
                 </button>
             </div>

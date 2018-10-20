@@ -2,4 +2,25 @@ page-login {
   .waves{
     width:100%; position: absolute; left: 0px; bottom: 0px;
   }
+  #img-logo{
+  	width: 50%;
+  	margin-bottom: 25px;
+  }
+  #img-title{
+  	width: 70%;
+  	margin-bottom: 40px;
+  }
+  .btn-1{
+  	margin-bottom: 15px;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    color: white;
+    background-color: #00C4B3;
+    border-radius: 5px !important;
+    /* margin-top: 25px; */
+    width: 90%;
+    left: 5%;
+    font-weight:bold;
+  }
+
 }

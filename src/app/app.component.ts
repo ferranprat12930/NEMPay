@@ -19,6 +19,7 @@ import {ContactListPage} from '../pages/contact/list/list';
 import {Network} from '@ionic-native/network';
 
 
+
 @Component({
     templateUrl: 'app.html'
 })
@@ -93,6 +94,10 @@ export class MyApp {
         }
         else this.splashScreen.hide();
 
+    }
+     public logout(){
+        
+        this.navCtrl.setRoot(LoginPage);
     }
 
 }

@@ -2,7 +2,7 @@
     <ion-header>
         <ion-toolbar color="light">
             <ion-title>
-              <img src="assets/img/logo.png" style="max-height:16px;"/> <span [innerHTML]="'APP_TITLE' | translate"></span>
+              <img src="assets/img/nem-title.png" style="max-height:16px;"/> 
             </ion-title>
         </ion-toolbar>
     </ion-header>
@@ -19,6 +19,12 @@
             </button>
             <button ion-item color="none" menuClose="" on-click="goToAccount()" id="menu-list-item5">
                 {{"ACCOUNT" | translate}}
+            </button>
+             
+        </ion-list>
+        <ion-list>
+            <button ion-item color="positive" block on-click="logout()" id="logout_menu">
+                {{'LOGOUT' | translate }}
             </button>
         </ion-list>
     </ion-content>
