@@ -32,7 +32,6 @@ export class TransferPage {
     mosaics: any;
 
     constructor(public navCtrl: NavController, private navParams: NavParams, private nem: NemProvider, private wallet: WalletProvider, private alert: AlertProvider, private toast: ToastProvider, private barcodeScanner: BarcodeScanner, private alertCtrl: AlertController, private loading: LoadingController, private keyboard: Keyboard, public translate: TranslateService) {
-
         this.amount = 0;
         this.rawRecipient = navParams.get('address') || '';
         this.selectedMosaic = <MosaicTransferable>navParams.get('selectedMosaic');

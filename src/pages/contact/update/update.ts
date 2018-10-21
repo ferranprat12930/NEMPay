@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, LoadingController} from 'ionic-angular';
 import {TranslateService} from '@ngx-translate/core';
 import {SocialSharing} from '@ionic-native/social-sharing';
-
+import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 import {ToastProvider} from '../../../providers/toast/toast.provider';
 import {WalletProvider} from '../../../providers/wallet/wallet.provider';
 import {ContactProvider} from '../../../providers/contact/contact.provider';
@@ -27,7 +27,7 @@ export class UpdateContactPage {
     previousAddress:string;
     id : number;
 
-    constructor(public navCtrl: NavController, private navParams: NavParams, private nem: NemProvider, private wallet: WalletProvider, private toast: ToastProvider, private contact: ContactProvider, private loading: LoadingController, public translate: TranslateService, private alert: AlertProvider, private socialSharing:SocialSharing) {
+    constructor(public navCtrl: NavController, private navParams: NavParams, private nem: NemProvider, private wallet: WalletProvider, private toast: ToastProvider, private barcodeScanner: BarcodeScanner, private contact: ContactProvider, private loading: LoadingController, public translate: TranslateService, private alert: AlertProvider, private socialSharing:SocialSharing) {
         this.owner = navParams.get('owner');
         this.name = navParams.get('name');
         this.address = navParams.get('address') || '';
@@ -99,16 +99,24 @@ export class UpdateContactPage {
      * moves to balance
      * @param address address to send asset
      */
+
     public goToBalance() {
         this.navCtrl.push(BalancePage, {'address': this.previousAddress});
     };
-
     /**
      * Share current account through apps installed on the phone
      */
     public shareAddress() {
         this.socialSharing.share(this.previousAddress, this.name + " Address", null, null).then(_ => {
 
+        });
+    }
+    public scanQR() {
+        this.barcodeScanner.scan().then((barcodeData) => {
+            let addresObject = JSON.parse(barcodeData.text);
+            this.address = addresObject.data.addr;
+        }, (err) => {
+            console.log("Error on scan");
         });
     }
 

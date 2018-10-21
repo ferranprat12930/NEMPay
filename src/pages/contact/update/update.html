@@ -10,7 +10,13 @@
 </ion-header>
 <ion-content id="contact-update" padding >
     <div class="default-padding">
-
+        <ion-row>
+            <ion-col>
+                <span  on-click="scanQR()" class="scan-button-wrapper">
+                    <ion-icon name="qr-scanner"></ion-icon> {{'SCAN_QR' | translate}}
+                </span>
+            </ion-col>
+        </ion-row>
         <form (ngSubmit)="saveContact()">
             <ion-item id="name-input">
                 <ion-label stacked>
