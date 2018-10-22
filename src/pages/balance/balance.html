@@ -18,21 +18,43 @@
                 refreshingText="{{'REFRESHING' | translate}} ">
         </ion-refresher-content>
     </ion-refresher>
-
     <form>
 
-        <ion-list radio-group [(ngModel)]="selectedMosaic" name="selected-mosaic">
-            <ion-item *ngFor="let mosaic of balance">
-                <ion-radio [value]="mosaic"></ion-radio>
-
-                <ion-label><b>
-                    {{ mosaic.amount }}</b>
-                    {{ mosaic.mosaicId.description() }}
-                </ion-label>
-
-            </ion-item>
+        <ion-list id="list-xem" radio-group [(ngModel)]="selectedMosaic" name="selected-mosaic">
+            <div *ngFor="let mosaic of balance">
+                <ion-card>
+                    <ion-item *ngIf="(mosaic.mosaicId.description() == 'nem:xem')">
+                            <ion-radio [value]="mosaic"> </ion-radio>
+                                <ion-avatar item-start>
+                                    <img src="assets/img/nem-white.png">
+                                </ion-avatar>
+                            <ion-label>
+                                <b>XEM</b> <br>
+                                {{ mosaic.amount }}
+                        </ion-label>
+                     </ion-item>
+                 </ion-card>
+             </div>
         </ion-list>
-
+    </form>
+    <form>
+        <ion-list radio-group [(ngModel)]="selectedMosaic" name="selected-mosaic">
+            <ion-list-header>TOKEN</ion-list-header>
+            <ion-card *ngFor="let mosaic of balance">
+                <ion-item *ngIf="(mosaic.mosaicId.description() != 'nem:xem' && mosaic.amount > 0)">
+                    
+                        <ion-radio [value]="mosaic"> </ion-radio>
+                            <ion-avatar item-start>
+                                <img src="assets/img/mosaic.png">
+                            </ion-avatar>
+                        <ion-label >
+                            <b > {{ mosaic.mosaicId.description() }} </b><br>
+                             {{ mosaic.amount }}
+                            
+                    </ion-label>
+                 </ion-item>
+             </ion-card>
+        </ion-list>
     </form>
 
 
