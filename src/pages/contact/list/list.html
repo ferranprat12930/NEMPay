@@ -12,13 +12,13 @@
 <ion-content id="contact-list" padding>
 
     <ion-list>
-        <ion-avatar item-start>
-            <img src="assets/img/receiver.png">
-        </ion-avatar>
+        
         <ion-item-sliding *ngFor="let contact of contacts">
-     
             <ion-item (click)="goToUpdateContact(contact.id, contact.name, contact.address)">
-                {{contact.name}}
+                <ion-avatar item-start>
+                    <img src="assets/img/contact.png">
+                </ion-avatar>
+                <ion-label>{{contact.name}}</ion-label>
             </ion-item>
          
             <ion-item-options>

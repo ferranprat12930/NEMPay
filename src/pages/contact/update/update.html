@@ -10,34 +10,40 @@
 </ion-header>
 <ion-content id="contact-update" padding >
     <div class="default-padding">
-        <ion-row>
-            <ion-col>
-                <span  on-click="scanQR()" class="scan-button-wrapper">
-                    <ion-icon name="qr-scanner"></ion-icon> {{'SCAN_QR' | translate}}
-                </span>
-            </ion-col>
-        </ion-row>
+
+         <button  on-click="scanQR()"  class="btn-2">
+            <ion-icon name="qr-scanner"></ion-icon> {{'SCAN_QR' | translate}}
+        </button>
+
         <form (ngSubmit)="saveContact()">
-            <ion-item id="name-input">
-                <ion-label stacked>
-                    {{'NAME' | translate}}
-                </ion-label>
-                <ion-input type="text" name="name" placeholder="" [(ngModel)]="name"></ion-input>
-            </ion-item>
+            <ion-list>
+                <ion-item id="name-input">
+                    <ion-avatar item-start>
+                        <img src="assets/img/contact.png">
+                    </ion-avatar>
+                    <ion-label stacked>
+                        {{'NAME' | translate}}
+                    </ion-label>
+                    <ion-input type="text" name="name" placeholder="" [(ngModel)]="name"></ion-input>
+                </ion-item>
 
-            <ion-item id="contact-input">
-                <ion-label stacked>
-                    {{'CONTACT_ADDRESS' | translate}}
-                </ion-label>
-                <ion-input type="text" name="address" placeholder="" [(ngModel)]="address"></ion-input>
-            </ion-item>
+                <ion-item id="contact-input">
+                    <ion-avatar item-start>
+                        <img src="assets/img/receiver.png">
+                    </ion-avatar>
+                    <ion-label stacked>
+                        {{'CONTACT_ADDRESS' | translate}}
+                    </ion-label>
+                    <ion-input type="text" name="address" placeholder="" [(ngModel)]="address"></ion-input>
+                </ion-item>
 
-            <div class="spacer"></div>
+                <div class="spacer"></div>
 
-            <button ion-button color="positive" block  [disabled]="!name || !address">
-                <span *ngIf='id'> {{'UPDATE_CONTACT' | translate}}</span>
-                <span *ngIf='!id'> {{'ADD_CONTACT' | translate}}</span>
-            </button>
+                <button ion-button color="positive" block  [disabled]="!name || !address" class="btn-1">
+                    <span *ngIf='id'> {{'UPDATE_CONTACT' | translate}}</span>
+                    <span *ngIf='!id'> {{'ADD_CONTACT' | translate}}</span>
+                </button>
+            </ion-list>
         </form>
 
     </div>
@@ -50,14 +56,14 @@
 
             <div class="col col-50">
                 <button ion-button  block color="positive"
-                        (click)="goToBalance()">
+                        (click)="goToBalance()" class="btn-1">
                     {{'TRANSFER_BUTTON' | translate}}
                 </button>
             </div>
 
             <div class="col col-50">
                 <button ion-button  block color="positive"
-                        (click)="shareAddress()">
+                        (click)="shareAddress()" class="btn-1">
                     {{'SHARE_ADDRESS' | translate}}
                 </button>
             </div>
