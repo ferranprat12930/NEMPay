@@ -1,3 +1,30 @@
 page-signup {
-
+.btn-1{
+  	margin-bottom: 15px;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    color: white;
+    background-color: #00C4B3;
+    border-radius: 5px !important;
+    /* margin-top: 25px; */
+    width: 100%;
+    font-weight:bold;
+  }
+  .tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true]{
+  	color: white;
+  	background-color: #00C4B3;
+  	font-weight: bold;
+  }
+  .btn-2{
+  	margin-bottom: 15px;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    color: white;
+    background-color: #35ADDF;
+    border-radius: 5px !important;
+    /* margin-top: 25px; */
+    width: 100%;
+    font-weight:bold;
+    font-size: 15px;
+  }
 }

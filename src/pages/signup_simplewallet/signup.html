@@ -4,27 +4,35 @@
     <form>
         <ion-list>
             <ion-item>
-                <ion-label>
+                 <ion-avatar item-start>
+                    <img src="assets/img/contact.png">
+                </ion-avatar>
+                <ion-label stacked>
                     {{'WALLET_NAME' | translate}}
                 </ion-label>
                 <ion-input [(ngModel)]="newAccount.name" name="name" type="text" placeholder=""></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label>
+                <ion-avatar item-start>
+                    <img src="assets/img/password.png">
+                </ion-avatar>
+                <ion-label stacked>
                     {{'PASSWORD' | translate}}
 
                 </ion-label>
                 <ion-input type="password" [(ngModel)]="newAccount.password" name="password"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label>
+                <ion-avatar item-start>
+                    <img src="assets/img/password.png">
+                </ion-avatar>
+                <ion-label stacked>
                     {{'REPEAT_PASSWORD' | translate}}
                 </ion-label>
                 <ion-input type="password" [(ngModel)]="newAccount.repeat_password"
                            name="repeat_password"></ion-input>
             </ion-item>
         </ion-list>
-        <div class="spacer xs"></div>
 
         <div>
             <p class="black-color">
@@ -35,7 +43,7 @@
         <div class="spacer xs"></div>
 
         <button ion-button color="stable" block on-click="createSimpleWallet()"
-                [disabled]="!newAccount.password || !newAccount.repeat_password || !newAccount.name">
+                [disabled]="!newAccount.password || !newAccount.repeat_password || !newAccount.name" class="btn-1">
             {{'SIGNUP' | translate}}
         </button>
     </form>
