@@ -81,5 +81,12 @@
   white-space:nowrap;
   text-overflow: ellipsis;
 }
+ .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+    background-color: #00C4B3 !important;
+    color: white;
+  }
+  .toolbar-ios-light .toolbar-title-ios, .toolbar-ios-light .bar-button-clear-ios, .toolbar-ios-light .bar-button-default-ios{
+    color: white;
+  }
 
 

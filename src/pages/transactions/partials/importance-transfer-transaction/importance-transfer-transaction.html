@@ -1,3 +1,13 @@
+<ion-col col-3>
+    <ion-avatar item-start style="float:left;">
+        <img src="assets/img/settings.png">
+    </ion-avatar>
+</ion-col>
+<ion-col col-9>
+<h2><span *ngIf="tx.mode == 1">{{ 'ACTIVATE_HARVESTING' | translate}}</span>
+    <span *ngIf="tx.mode == 2">{{ 'DEACTIVATE_HARVESTING' | translate}}</span></h2>
+</ion-col>
+
 <!-- Sender or recipient -->
 <p class="fit-long-address">
     <b>
@@ -12,11 +22,4 @@
 </p>
 
 <!-- Fee -->
-<p *ngIf="tx.fee"><b>{{'FEE' | translate}}:</b> {{(tx.fee) | formatXEM}} nem:xem</p>
-
-
-<!-- Message -->
-<p>
-    <span *ngIf="tx.mode == 1">{{ 'ACTIVATE_HARVESTING' | translate}}</span>
-    <span *ngIf="tx.mode == 2">{{ 'DEACTIVATE_HARVESTING' | translate}}</span>
-</p>
+<p *ngIf="tx.fee"><b>{{'FEE' | translate}}:</b> {{(tx.fee) | formatXEM}} XEM/p>

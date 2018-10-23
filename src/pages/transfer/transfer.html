@@ -37,8 +37,6 @@
                 <ion-input type="number" min="0" name="amount" [(ngModel)]="amount" placeholder=""></ion-input>
             </ion-item>
 
-            
-
             <ion-item>
                 <ion-avatar item-start>
                     <img src="assets/img/message.png">
@@ -55,38 +53,7 @@
             </button>
         </ion-list>
     </form>
-    <!--
-    <form (ngSubmit)="startTransaction()">
-        <ion-item id="transfer-input1">
-            <ion-label stacked>
-                {{'RECIPIENT_ADDRESS' | translate}}
-            </ion-label>
-            <ion-input type="text" name="recipient" placeholder="" [(ngModel)]="rawRecipient"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label>
-                {{'AMOUNT' | translate}}
-            </ion-label>
-            <ion-input type="number" min="0" name="amount" [(ngModel)]="amount" placeholder=""></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label>
-                {{selectedMosaic.mosaicId.description()}}
-            </ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-label stacked>
-                {{'MESSAGE' | translate}}
-            </ion-label>
-            <ion-textarea rows="8" name="message" placeholder="" [(ngModel)]="message"></ion-textarea>
-        </ion-item>
-        <div class="spacer xs"></div>
-
-        <button ion-button color="positive" block  [disabled]="amount > 9000000000" class="btn-1">
-            {{'CONTINUE' | translate}}
-        </button>
-    </form>-->
+    
 
     </div>
 

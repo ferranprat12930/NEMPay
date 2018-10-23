@@ -1,3 +1,19 @@
 page-transactions {
-
+ .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+  	background-color: #00C4B3 !important;
+  	color: white;
+  }
+  .toolbar-ios-light .toolbar-title-ios, .toolbar-ios-light .bar-button-clear-ios, .toolbar-ios-light .bar-button-default-ios{
+  	color: white;
+  }
+  .tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true]{
+  	color: white;
+  	background-color: #00C4B3;
+  	font-weight: bold;
+  }
+  /*
+  .tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true]{
+  	color: white;
+  	background-color: #FEA839;
+  }*/
 }

@@ -1,23 +1,42 @@
+<ion-col col-3 *ngIf="owner?.plain() == tx?.recipient.plain()">
+    <ion-avatar item-start style="float:left;">
+        <img src="assets/img/positive.png">
+    </ion-avatar>
+</ion-col>
+<ion-col col-3 *ngIf="owner?.plain() != tx?.recipient.plain()">
+    <ion-avatar item-start style="float:left;">
+        <img src="assets/img/negative.png">
+    </ion-avatar>
+</ion-col>
+<ion-col col-9>
 <h2>
-    <span [hidden]="!mosaics || amount === 0">
-        <span class="color-plus" *ngIf="owner?.plain() == tx?.otherTransaction.recipient?.plain()">
+    <span [hidden]="!mosaics || amount == 0">
+        <!--<span class="color-plus" *ngIf="owner?.plain() == tx?.recipient.plain()">
             +
         </span>
-        <span class="color-less" *ngIf="owner?.plain() != tx?.otherTransaction.recipient?.plain()">
+        <span class="color-less" *ngIf="owner?.plain() != tx?.recipient.plain()">
             -
-        </span>
-        {{amount}} nem:xem
+        </span>-->
+        {{amount}} XEM
     </span>
     <span *ngFor="let mosaic of mosaics">
-        <span class="color-plus" *ngIf="owner?.plain() == tx?.otherTransaction.recipient?.plain()">
+
+        <!--<span class="color-plus" *ngIf="owner?.plain() == tx?.recipient.plain()">
             +
         </span>
-        <span class="color-less" *ngIf="owner?.plain() != tx?.otherTransaction.recipient?.plain()">
+        <span class="color-less" *ngIf="owner?.plain() != tx?.recipient.plain()">
             -
-        </span>
-        {{ mosaic.amount?.toString() }} {{mosaic.mosaicId.description()}}
+        </span>-->
+        <span *ngIf="(mosaic.mosaicId.description() == 'nem:xem')"> {{ mosaic.amount?.toString() }} XEM</span>
+         <span *ngIf="(mosaic.mosaicId.description() != 'nem:xem')"> {{ mosaic.amount?.toString() }} {{mosaic.mosaicId.description()}}</span>
     </span>
 </h2>
+<ion-col>
+
+
+
+
+
 
 <!-- Sender or recipient -->
 <p class="fit-long-address">
@@ -35,7 +54,7 @@
 
 <!-- Fee -->
 
-<p *ngIf="tx.fee"><b>{{'FEE' | translate}}:</b> {{(tx.fee+tx.otherTransaction.fee) | formatXEM}} nem:xem</p>
+<p *ngIf="tx.fee"><b>{{'FEE' | translate}}:</b> {{(tx.fee+tx.otherTransaction.fee) | formatXEM}} XEM</p>
 
 <!-- Has levy -->
 <p>
