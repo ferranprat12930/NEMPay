@@ -1,22 +1,61 @@
 <ion-header>
     <ion-navbar color="light">
-        <button ion-button menuToggle>
+        <button ion-button menuToggle class="white-color">
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>
+        <ion-title class="white-title">
             {{'TRANSFER' | translate}}
         </ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content padding id="transfer">
     <div class="default-padding">
-    <ion-row>
-        <ion-col>
-        <span  on-click="scanQR()" class="scan-button-wrapper">
+    
+        <button  on-click="scanQR()"  class="btn-2">
             <ion-icon name="qr-scanner"></ion-icon> {{'SCAN_QR' | translate}}
-        </span>
-        </ion-col>
-    </ion-row>
+        </button>
+        
+    <form (ngSubmit)="startTransaction()">
+        <ion-list >
+            <ion-item>
+                <ion-avatar item-start>
+                    <img src="assets/img/receiver.png">
+                </ion-avatar>
+                <ion-label stacked>{{'RECIPIENT_ADDRESS' | translate}}</ion-label>
+                <ion-input type="text" name="recipient" placeholder="" [(ngModel)]="rawRecipient"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-start stacked *ngIf="(selectedMosaic.mosaicId.description() != 'nem:xem')">
+                    <img src="assets/img/mosaic.png">
+                </ion-avatar>
+                <ion-avatar item-start stacked *ngIf="(selectedMosaic.mosaicId.description() == 'nem:xem')">
+                    <img src="assets/img/nem-white.png">
+                </ion-avatar>
+                <ion-label stacked *ngIf="(selectedMosaic.mosaicId.description() == 'nem:xem')"> {{'AMOUNT' | translate}} (XEM)</ion-label>
+                <ion-label stacked *ngIf="(selectedMosaic.mosaicId.description() != 'nem:xem')"> {{'AMOUNT' | translate}} ({{selectedMosaic.mosaicId.description()}})</ion-label>
+                <ion-input type="number" min="0" name="amount" [(ngModel)]="amount" placeholder=""></ion-input>
+            </ion-item>
+
+            
+
+            <ion-item>
+                <ion-avatar item-start>
+                    <img src="assets/img/message.png">
+                </ion-avatar>
+                <ion-label stacked>
+                    {{'MESSAGE' | translate}}
+                </ion-label>
+                <ion-textarea rows="8" name="message" placeholder="" [(ngModel)]="message"></ion-textarea>
+            </ion-item>
+            <div class="spacer xs"></div>
+
+            <button ion-button color="positive" block  [disabled]="amount > 9000000000" class="btn-1">
+                {{'CONTINUE' | translate}}
+            </button>
+        </ion-list>
+    </form>
+    <!--
     <form (ngSubmit)="startTransaction()">
         <ion-item id="transfer-input1">
             <ion-label stacked>
@@ -44,10 +83,10 @@
         </ion-item>
         <div class="spacer xs"></div>
 
-        <button ion-button color="positive" block  [disabled]="amount > 9000000000">
+        <button ion-button color="positive" block  [disabled]="amount > 9000000000" class="btn-1">
             {{'CONTINUE' | translate}}
         </button>
-    </form>
+    </form>-->
 
     </div>
 

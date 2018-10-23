@@ -12,18 +12,20 @@
 <ion-content id="contact-list" padding>
 
     <ion-list>
- 
-      <ion-item-sliding *ngFor="let contact of contacts">
+        <ion-avatar item-start>
+            <img src="assets/img/receiver.png">
+        </ion-avatar>
+        <ion-item-sliding *ngFor="let contact of contacts">
      
-        <ion-item (click)="goToUpdateContact(contact.id, contact.name, contact.address)">
-            {{contact.name}}
-        </ion-item>
-     
-        <ion-item-options>
-            <button primary (click)="goToUpdateContact(contact.id, contact.name, contact.address)"> <ion-icon name="ios-eye"></ion-icon> {{'EDIT' | translate}}</button>
-          <button danger (click)="deleteContact(contact.id)"> <ion-icon name="ios-close-outline"></ion-icon>{{'DELETE' | translate}}</button>
-        </ion-item-options>
-      </ion-item-sliding>
+            <ion-item (click)="goToUpdateContact(contact.id, contact.name, contact.address)">
+                {{contact.name}}
+            </ion-item>
+         
+            <ion-item-options>
+                <button primary (click)="goToUpdateContact(contact.id, contact.name, contact.address)"> <ion-icon name="ios-eye"></ion-icon> {{'EDIT' | translate}}</button>
+                <button danger (click)="deleteContact(contact.id)"> <ion-icon name="ios-close-outline"></ion-icon>{{'DELETE' | translate}}</button>
+            </ion-item-options>
+        </ion-item-sliding>
  
   </ion-list>
 
@@ -33,7 +35,7 @@
 <ion-footer no-shadow>
     <ion-toolbar position="bottom" class="background-white">
         <div class="row">
-            <button ion-button  color="positive" class="col"
+            <button ion-button  color="positive" class="col btn-1"
                 (click)="goToUpdateContact()">
             {{'ADD_CONTACT' | translate}}
         </button>

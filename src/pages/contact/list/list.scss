@@ -1,3 +1,21 @@
 page-contact-list {
 
+.header-ios .toolbar-ios:last-child .toolbar-background-ios{
+  	background-color: #00C4B3 !important;
+  	color: white;
+  }
+  .toolbar-ios-light .toolbar-title-ios, .toolbar-ios-light .bar-button-clear-ios, .toolbar-ios-light .bar-button-default-ios{
+    color: white;
+  }
+.btn-1{
+
+    padding: 10px;
+    /* border: 1px solid #000; */
+    color: white;
+    background-color: #00C4B3;
+    border-radius: 5px !important;
+    /* margin-top: 25px; */
+
+    font-weight:bold;
+  }
 }

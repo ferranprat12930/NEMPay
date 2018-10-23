@@ -1,7 +1,35 @@
 page-transfer {
-
-  .scan-button-wrapper{
-    float: right;
+  
+  .btn-1{
+  	margin-bottom: 15px;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    color: white;
+    background-color: #00C4B3;
+    border-radius: 5px !important;
+    /* margin-top: 25px; */
+    width: 90%;
+    left: 5%;
+    font-weight:bold;
   }
-
+  .btn-2{
+  	margin-bottom: 15px;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    color: white;
+    background-color: #35ADDF;
+    border-radius: 5px !important;
+    /* margin-top: 25px; */
+    width: 100%;
+    font-weight:bold;
+    font-size: 15px;
+  }
+  .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+  	background-color: #00C4B3 !important;
+  	color: white;
+  }
+  .toolbar-ios-light .toolbar-title-ios, .toolbar-ios-light .bar-button-clear-ios, .toolbar-ios-light .bar-button-default-ios{
+  	color: white;
+  }
 }
+

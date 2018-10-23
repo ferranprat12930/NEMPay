@@ -12,4 +12,18 @@ page-balance {
   #list-xem{
   	margin-bottom: -10px;
   }
+ .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+  	background-color: #00C4B3 !important;
+  	color: white;
+  }
+  .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios{
+  	border-color: white;
+  }
+  .toolbar-title-ios{
+  	color: white;
+  }
+  .white-color{
+  	color: white;
+  }
+
 }
