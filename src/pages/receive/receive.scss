@@ -4,6 +4,16 @@ page-receive {
     height: 250px;
     margin: 0 auto;
     display: block;
-    margin-top: 20px;
+  }
+  #qr_card{
+  	margin-bottom: 30px;
+  }
+
+  .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+  	background-color: #00C4B3 !important;
+  	color: white;
+  }
+  .toolbar-ios-light .toolbar-title-ios, .toolbar-ios-light .bar-button-clear-ios, .toolbar-ios-light .bar-button-default-ios{
+  	color: white;
   }
 }

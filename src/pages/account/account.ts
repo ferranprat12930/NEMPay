@@ -144,6 +144,14 @@ export class AccountPage {
         }
         else this.alert.showFunctionallityOnlyAvailableInMobileDevices();
     }
+    public copyPublicKeyToClipboard(){
+        if (this.platform.is('cordova')) {
+            this.clipboard.copy(this.selectedWallet.address).then(_ => {
+                this.toast.showPrivateKeyCopyCorrect();
+            });
+        }
+        else this.alert.showFunctionallityOnlyAvailableInMobileDevices();
+    }
 
 
     /**

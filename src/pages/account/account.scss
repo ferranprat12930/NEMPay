@@ -4,9 +4,10 @@ page-account {
     height: 250px;
     margin: 0 auto;
     display: block;
-    margin-top: 20px;
   }
-
+  #qr_card{
+    margin-bottom: 30px;
+  }
   .spacer{
     width:300px;
     height:40px;
@@ -19,5 +20,41 @@ page-account {
   .toolbar-ios-light .toolbar-title-ios, .toolbar-ios-light .bar-button-clear-ios, .toolbar-ios-light .bar-button-default-ios{
     color: white;
   }
-
+  .btn-1{
+    margin-bottom: 15px;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    color: white;
+    background-color: #00C4B3;
+    border-radius: 5px !important;
+    /* margin-top: 25px; */
+    width: 100%;
+  
+    font-weight:bold;
+  }
+  .btn-copy{
+    margin-bottom: 15px;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    color: white;
+    background-color: #00C4B3;
+    border-radius: 5px !important;
+    /* margin-top: 25px; */
+    width: 90%;
+    font-weight:bold;
+  }
+  .btn-share{
+    margin-bottom: 15px;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    color: white;
+    background-color: #00C4B3;
+    border-radius: 5px !important;
+    /* margin-top: 25px; */
+    width: 100%;
+    font-weight:bold;
+  }
+  .list-buttons{
+    margin-bottom: 10px !important;
+  }
 }
