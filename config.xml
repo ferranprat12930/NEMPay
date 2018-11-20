@@ -98,5 +98,5 @@
     </plugin>
     <preference name="SplashScreen" value="screen" />
     <engine name="android" spec="^6.4.0" />
-    <engine name="ios" spec="~4.3.1" />
+    <engine name="ios" spec="4.3.1" />
 </widget>

@@ -109,7 +109,7 @@ export class NemProvider {
      * @return Address QR Text
      */
     public generateInvoiceQRText(address: Address, amount:number, message: string): string {
-        return this.qrService.generateTransactionQRText(address, amount, message);
+        return this.qrService.generateTransactionQRText(address, amount*1000000, message);
     }
 
 

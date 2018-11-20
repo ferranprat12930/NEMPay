@@ -23,18 +23,51 @@
                 <ion-label>{{selectedWallet?.address.pretty()}}</ion-label>
             </ion-item>
 
-            <ion-item>
-                <ion-avatar item-start stacked *ngIf="(selectedMosaic.mosaicId.description() != 'nem:xem')">
-                    <img src="assets/img/token.png">
-                </ion-avatar>
-                <ion-avatar item-start stacked *ngIf="(selectedMosaic.mosaicId.description() == 'nem:xem')">
+            <ion-item *ngIf="(selectedMosaic.mosaicId.description() == 'nem:xem')">
+                <ion-avatar item-start stacked *ngIf="(this.selectedCurrency == 1)">
                     <img src="assets/img/nem-white.png">
                 </ion-avatar>
-                <ion-label stacked *ngIf="(selectedMosaic.mosaicId.description() == 'nem:xem')"> {{'AMOUNT' | translate}} (XEM)</ion-label>
-                <ion-label stacked *ngIf="(selectedMosaic.mosaicId.description() != 'nem:xem')"> {{'AMOUNT' | translate}} ({{selectedMosaic.mosaicId.description()}})</ion-label>
+                <ion-avatar item-start stacked *ngIf="(selectedCurrency == 2)">
+                    <img src="assets/img/usd.png">
+                </ion-avatar>
+                <ion-avatar item-start stacked *ngIf="(selectedCurrency == 3)">
+                    <img src="assets/img/eur.png">
+                </ion-avatar>
+                <ion-label stacked> Currency</ion-label>
+                <ion-select [(ngModel)]="selectedCurrency" name="selected_currency">
+                    <ion-option [value]="1">XEM
+                    </ion-option>
+                    <ion-option [value]="2">USD
+                    </ion-option>
+                    <ion-option [value]="3">EUR
+                    </ion-option>
+                </ion-select>
+
+            </ion-item>
+
+             <ion-item *ngIf="(selectedMosaic.mosaicId.description() == 'nem:xem')">
+                <ion-avatar item-start stacked>
+                    <img src="assets/img/amount.png">
+                </ion-avatar>
+                <ion-label stacked> {{'AMOUNT' | translate}}</ion-label>
+                <ion-input type="number" min="0" name="amount" [(ngModel)]="currencyAmount" placeholder="" (ngModelChange)="calculateAmount()"></ion-input>
+
+            </ion-item>
+
+            <ion-item *ngIf="(selectedMosaic.mosaicId.description() != 'nem:xem')">
+                <ion-avatar item-start stacked>
+                    <img src="assets/img/amount.png">
+                </ion-avatar>
+                <ion-label stacked> {{'AMOUNT' | translate}} ({{selectedMosaic.mosaicId.description()}})</ion-label>
                 <ion-input type="number" min="0" name="amount" [(ngModel)]="amount" placeholder="" (ngModelChange)="updateQR()"></ion-input>
             </ion-item>
 
+             <ion-item *ngIf="(selectedMosaic.mosaicId.description() == 'nem:xem' && selectedCurrency != 1)">
+                <ion-avatar item-start stacked>
+                    <img src="assets/img/nem-white.png">
+                </ion-avatar>
+                <ion-label> Total: {{this.amount.toFixed(6)}} XEM</ion-label>
+            </ion-item>
             
 
             <ion-item>
