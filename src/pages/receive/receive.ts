@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, AlertController, LoadingController} from 'ionic-angular';
 import {Keyboard} from '@ionic-native/keyboard';
 import {TranslateService} from '@ngx-translate/core';
-import CoinMarketCap from 'node-coinmarketcap';
+
 import rp from 'request-promise';
 import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 import {NemProvider} from '../../providers/nem/nem.provider';
@@ -103,14 +103,12 @@ export class ReceivePage {
     public calculateAmount(){
         
         if (this.selectedCurrency == 2){
-            let str = this.getPriceUSD("XEM").then((data)=> {
+            var str = this.getPriceUSD("XEM").then((data)=> {
                 this.amount = this.currencyAmount/data});
-            return this.amount;
         }
         else if (this.selectedCurrency == 3){
-            let str = this.getPriceEUR("XEM").then((data)=> {
+            var str = this.getPriceEUR("XEM").then((data)=> {
                 this.amount = this.currencyAmount/data});
-            return this.amount;
         }
         else {
             this.amount = this.currencyAmount;
